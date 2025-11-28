@@ -2,6 +2,9 @@
 |splashscreen | Dashboard |Insights |
 |------------|---------------|----------------|
 | ![Game](screenshots/output_1.jpeg) | ![XWin](screenshots/output_4.jpeg) |![OWin](screenshots/output_7.jpeg) |
+
+
+
 A complete end-to-end project that predicts customer churn using
 **Machine Learning (Python)** and visualizes the results through a
 **Flutter-based UI**.\
