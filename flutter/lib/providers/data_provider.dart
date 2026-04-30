@@ -18,22 +18,22 @@ class DataProvider with ChangeNotifier {
   List<CustomerProfile> get filteredCustomers => _filteredCustomers;
   DataState get dataState => _dataState;
   int get totalCustomers => _allCustomers.length;
-  int get churnedCustomers => _allCustomers.where((c) => c.didChurn).length;
-  int get retainedCustomers => _allCustomers.where((c) => !c.didChurn).length;
+  int get churnedCustomers => _allCustomers.where((final c) => c.didChurn).length;
+  int get retainedCustomers => _allCustomers.where((final c) => !c.didChurn).length;
   double get churnRate =>
       totalCustomers > 0 ? (churnedCustomers / totalCustomers) * 100 : 0.0;
 
   // Getters for risk segments (now sorted on the fly)
   List<CustomerProfile> get highRiskCustomers =>
-      _allCustomers.where((c) => c.churnProbability >= 0.66).toList()
-        ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
+      _allCustomers.where((final c) => c.churnProbability >= 0.66).toList()
+        ..sort((final a, final b) => b.churnProbability.compareTo(a.churnProbability));
   List<CustomerProfile> get mediumRiskCustomers => _allCustomers
-      .where((c) => c.churnProbability >= 0.33 && c.churnProbability < 0.66)
+      .where((final c) => c.churnProbability >= 0.33 && c.churnProbability < 0.66)
       .toList()
-    ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
+    ..sort((final a, final b) => b.churnProbability.compareTo(a.churnProbability));
   List<CustomerProfile> get lowRiskCustomers =>
-      _allCustomers.where((c) => c.churnProbability < 0.33).toList()
-        ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
+      _allCustomers.where((final c) => c.churnProbability < 0.33).toList()
+        ..sort((final a, final b) => b.churnProbability.compareTo(a.churnProbability));
 
   DataProvider() {
     fetchData();
@@ -53,22 +53,22 @@ class DataProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  CustomerProfile? getCustomerById(String customerId) {
+  CustomerProfile? getCustomerById(final String customerId) {
     try {
-      return _allCustomers.firstWhere((c) => c.customerID == customerId);
+      return _allCustomers.firstWhere((final c) => c.customerID == customerId);
     } catch (e) {
       return null;
     }
   }
 
-  void search(String query) {
+  void search(final String query) {
     _searchQuery = query;
     if (_searchQuery.isEmpty) {
       _filteredCustomers = _allCustomers;
     } else {
       _filteredCustomers = _allCustomers
           .where(
-            (c) =>
+            (final c) =>
                 c.customerID.toLowerCase().contains(_searchQuery.toLowerCase()),
           )
           .toList();

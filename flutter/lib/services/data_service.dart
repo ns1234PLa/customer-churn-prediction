@@ -1,24 +1,38 @@
 // lib/services/data_service.dart
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:csv/csv.dart';
 import 'dart:convert';
+
+import 'package:csv/csv.dart';
+import 'package:flutter/services.dart' show rootBundle;
+
 import '../models/customer_profile.dart';
 
 class DataService {
   // Helper function to safely parse values into doubles
-  double _parseDouble(dynamic value) {
-    if (value == null) return 0.0;
-    if (value is double) return value;
-    if (value is int) return value.toDouble();
+  double _parseDouble(final value) {
+    if (value == null) {
+      return 0.0;
+    }
+    if (value is double) {
+      return value;
+    }
+    if (value is int) {
+      return value.toDouble();
+    }
     // Handles empty strings or non-numeric text gracefully
     return double.tryParse(value.toString().trim()) ?? 0.0;
   }
 
   // Helper function to safely parse values into integers
-  int _parseInt(dynamic value) {
-    if (value == null) return 0;
-    if (value is int) return value;
-    if (value is double) return value.toInt();
+  int _parseInt(final value) {
+    if (value == null) {
+      return 0;
+    }
+    if (value is int) {
+      return value;
+    }
+    if (value is double) {
+      return value.toInt();
+    }
     return int.tryParse(value.toString().trim()) ?? 0;
   }
 
@@ -39,10 +53,10 @@ class DataService {
       return [];
     }
 
-    final csvHeaders = csvList[0].map((h) => h.toString().trim()).toList();
+    final csvHeaders = csvList[0].map((final h) => h.toString().trim()).toList();
     final csvRows = csvList.skip(1);
 
-    final csvMap = csvRows.map((row) {
+    final csvMap = csvRows.map((final row) {
       final map = <String, dynamic>{};
       for (var i = 0; i < csvHeaders.length; i++) {
         if (i < row.length) {

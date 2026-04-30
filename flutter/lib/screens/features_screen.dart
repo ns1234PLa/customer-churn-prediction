@@ -7,7 +7,7 @@ class FeaturesScreen extends StatelessWidget {
   const FeaturesScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -271,7 +271,7 @@ class FeaturesScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildExplanationItem(IconData icon, String text) {
+  Widget _buildExplanationItem(final IconData icon, final String text) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Row(
@@ -295,11 +295,11 @@ class FeaturesScreen extends StatelessWidget {
   }
 
   Widget _buildFeatureCard(
-    String title,
-    String description,
-    IconData icon,
-    Color color,
-    int rank,
+    final String title,
+    final String description,
+    final IconData icon,
+    final Color color,
+    final int rank,
   ) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),

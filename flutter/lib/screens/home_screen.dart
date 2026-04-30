@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: Consumer<DataProvider>(
-                    builder: (context, dataProvider, child) {
+                    builder: (final context, final dataProvider, final child) {
                       if (dataProvider.dataState == DataState.loading) {
                         return const Center(
                           child: CircularProgressIndicator(
@@ -158,7 +158,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRiskDistributionChart(DataProvider dataProvider) {
+  Widget _buildRiskDistributionChart(final DataProvider dataProvider) {
     final lowRiskCount = dataProvider.lowRiskCustomers.length.toDouble();
     final mediumRiskCount = dataProvider.mediumRiskCustomers.length.toDouble();
     final highRiskCount = dataProvider.highRiskCustomers.length.toDouble();
@@ -234,7 +234,7 @@ class HomeScreen extends StatelessWidget {
                   barTouchData: BarTouchData(
                     enabled: true,
                     touchTooltipData: BarTouchTooltipData(
-                      getTooltipColor: (group) => const Color(0xFF1F2937),
+                      getTooltipColor: (final group) => const Color(0xFF1F2937),
                       tooltipBorder: const BorderSide(
                         color: Colors.transparent,
                       ),
@@ -243,7 +243,7 @@ class HomeScreen extends StatelessWidget {
                         vertical: 12,
                       ),
                       tooltipMargin: 8,
-                      getTooltipItem: (group, groupIndex, rod, rodIndex) {
+                      getTooltipItem: (final group, final groupIndex, final rod, final rodIndex) {
                         final stackItem = rod.rodStackItems[rodIndex];
                         String title;
                         double percentage;
@@ -296,7 +296,7 @@ class HomeScreen extends StatelessWidget {
                       sideTitles: SideTitles(
                         showTitles: true,
                         reservedSize: 50,
-                        getTitlesWidget: (value, meta) {
+                        getTitlesWidget: (final value, final meta) {
                           if (value == 0 || value >= meta.max) {
                             return const Text('');
                           }
@@ -331,7 +331,7 @@ class HomeScreen extends StatelessWidget {
                   gridData: FlGridData(
                     show: true,
                     drawVerticalLine: false,
-                    getDrawingHorizontalLine: (value) => FlLine(
+                    getDrawingHorizontalLine: (final value) => FlLine(
                       color: Colors.grey.withOpacity(0.1),
                       strokeWidth: 1,
                     ),
@@ -391,7 +391,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _legendItem(Color color, String text) {
+  Widget _legendItem(final Color color, final String text) {
     return Row(
       children: [
         Container(

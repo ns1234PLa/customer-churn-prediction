@@ -13,7 +13,7 @@ class CustomerDetailScreen extends StatelessWidget {
   const CustomerDetailScreen({super.key, required this.customerId});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final dataProvider = Provider.of<DataProvider>(context, listen: false);
     final CustomerProfile? customer = dataProvider.getCustomerById(customerId);
 
@@ -299,7 +299,7 @@ class CustomerDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildChurnPredictionCard(CustomerProfile customer, Color churnColor) {
+  Widget _buildChurnPredictionCard(final CustomerProfile customer, final Color churnColor) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -381,10 +381,10 @@ class CustomerDetailScreen extends StatelessWidget {
   }
 
   Widget _buildInfoSection(
-    String title,
-    IconData icon,
-    Color color, {
-    required List<Widget> children,
+    final String title,
+    final IconData icon,
+    final Color color, {
+    required final List<Widget> children,
   }) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
@@ -448,7 +448,7 @@ class CustomerDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDetailRow(String label, String value) {
+  Widget _buildDetailRow(final String label, final String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
