@@ -566,9 +566,8 @@ class _InsightsScreenState extends State<InsightsScreen>
     TitleMeta meta,
     List<String> categories,
   ) {
-    final text = categories.length > value.toInt()
-        ? categories[value.toInt()]
-        : '';
+    final text =
+        categories.length > value.toInt() ? categories[value.toInt()] : '';
     return Padding(
       padding: const EdgeInsets.only(top: 10.0),
       child: Transform.rotate(
@@ -643,8 +642,10 @@ class _InsightsScreenState extends State<InsightsScreen>
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
           ),
-          topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          topTitles:
+              const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          rightTitles:
+              const AxisTitles(sideTitles: SideTitles(showTitles: false)),
         ),
         borderData: FlBorderData(show: false),
         gridData: FlGridData(
@@ -753,8 +754,10 @@ class _InsightsScreenState extends State<InsightsScreen>
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
           ),
-          topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          topTitles:
+              const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          rightTitles:
+              const AxisTitles(sideTitles: SideTitles(showTitles: false)),
         ),
         borderData: FlBorderData(show: false),
         gridData: FlGridData(
@@ -823,8 +826,7 @@ class _InsightsScreenState extends State<InsightsScreen>
         centerSpaceRadius: 50,
         sections: List.generate(_processedData.length, (index) {
           final category = _processedData.keys.toList()[index];
-          final total =
-              _processedData[category]!['churned']! +
+          final total = _processedData[category]!['churned']! +
               _processedData[category]!['retained']!;
           return PieChartSectionData(
             color: colors[index % colors.length],

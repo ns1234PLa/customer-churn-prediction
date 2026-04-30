@@ -25,9 +25,8 @@ class ShapFeatureDisplay extends StatelessWidget {
               ? Icons.arrow_upward_rounded
               : Icons.arrow_downward_rounded;
           final color = isPositive ? Colors.red : Colors.green;
-          final impactText = isPositive
-              ? 'Increases churn risk'
-              : 'Decreases churn risk';
+          final impactText =
+              isPositive ? 'Increases churn risk' : 'Decreases churn risk';
 
           return ListTile(
             leading: Icon(icon, color: color),

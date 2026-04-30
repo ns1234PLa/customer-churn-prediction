@@ -1,74 +1,91 @@
-# 📊 Customer Churn Prediction --- ML + Flutter UI
-|splashscreen | Dashboard |Insights |
-|------------|---------------|----------------|
-| ![Game](screenshots/output_1.jpeg) | ![XWin](screenshots/output_4.jpeg) |![OWin](screenshots/output_7.jpeg) |
+# Customer Churn Prediction
 
+A complete end-to-end system that predicts customer churn using Machine Learning (Python) and visualizes the results through a Flutter-based mobile application. This project helps businesses identify at-risk customers, improve retention strategies, and understand churn drivers through SHAP explainability.
 
+---
 
-A complete end-to-end project that predicts customer churn using
-**Machine Learning (Python)** and visualizes the results through a
-**Flutter-based UI**.\
-This system helps businesses identify at-risk customers, improve
-retention, and understand churn drivers through SHAP explainability.
+## Screenshots
 
-## 🚀 Project Overview
+| Splash Screen | Dashboard Overview | Customer Search |
+|---|---|---|
+| ![Splash Screen](flutter/assets/screenshots/splash_screnen.jpg) | ![Dashboard Overview](flutter/assets/screenshots/home_screen.jpg) | ![Customer Search](flutter/assets/screenshots/search_screen.jpg) |
 
-This project integrates:
+| Churn Insights | Feature Breakdown | Risk Distribution |
+|---|---|---|
+| ![Churn Insights](flutter/assets/screenshots/insight_screen_1.jpg) | ![Feature Breakdown](flutter/assets/screenshots/insight_screen_2.jpg) | ![Risk Distribution](flutter/assets/screenshots/insight_screen_3.jpg) |
 
--   **Python Machine Learning Pipeline**
--   **Flutter Frontend Application**
+---
 
-## 📁 Repository Structure
+## Project Overview
 
-    ├── notebook/
-    │   ├── data_preprocess.ipynb
-    │   ├── generate_full_predictions.ipynb
-    │   ├── all_customers_predictions.csv
-    │
-    ├── models/
-    │   └── best_xgb_model.pkl
-    │
-    ├── metrics/
-    │   └── shap_all_customers.csv
-    │
-    ├── flutter_app/
-    │   ├── lib/
-    │   ├── assets/
-    │   ├── pubspec.yaml
-    │
-    └── README.md
+This project integrates a Python-based machine learning pipeline with a Flutter frontend to deliver an offline-ready churn prediction dashboard. The ML pipeline handles data preprocessing, model training, and SHAP-based explainability, while the Flutter app presents predictions and insights in a clean, responsive interface.
 
-## 🧠 Machine Learning Pipeline (Python)
+---
 
--   Data preprocessing\
--   Feature engineering\
--   Model training (XGBoost, SVM, RF, LR)\
--   SHAP explainability\
--   Batch predictions export
+## Repository Structure
 
-## 📱 Flutter UI
+```
+├── notebook/
+│   ├── data_preprocess.ipynb
+│   ├── generate_full_predictions.ipynb
+│   └── all_customers_predictions.csv
+│
+├── models/
+│   └── best_xgb_model.pkl
+│
+├── metrics/
+│   └── shap_all_customers.csv
+│
+├── flutter/
+│   ├── lib/
+│   ├── assets/
+│   └── pubspec.yaml
+│
+└── README.md
+```
 
--   Clean responsive interface\
--   Displays churn predictions\
--   Customer-level SHAP insights\
--   Offline-ready using CSV/JSON\
--   Extendable to API backend
+---
 
-## 📦 Running the Project
+## Machine Learning Pipeline
 
-### Python ML
+- Data preprocessing and feature engineering
+- Model training and evaluation — XGBoost, SVM, Random Forest, Logistic Regression
+- SHAP-based explainability for individual predictions
+- Batch prediction export to CSV for use in the Flutter app
 
-    pip install -r requirements.txt
-    jupyter notebook notebook/data_preprocess.ipynb
-    jupyter notebook notebook/generate_full_predictions.ipynb
+---
 
-### Flutter UI
+## Flutter Application
 
-    flutter pub get
-    flutter run
+- Responsive mobile UI built with Flutter
+- Displays churn predictions at the customer level
+- SHAP-driven insights per customer
+- Offline-ready — powered by local CSV/JSON assets
+- Extendable to a live API backend
 
-Place exported CSV files into Flutter app assets.
+---
 
-## 📄 License
+## Getting Started
 
-MIT License.
+### Machine Learning
+
+```bash
+pip install -r requirements.txt
+jupyter notebook notebook/data_preprocess.ipynb
+jupyter notebook notebook/generate_full_predictions.ipynb
+```
+
+### Flutter App
+
+```bash
+flutter pub get
+flutter run
+```
+
+Place the exported CSV files into the `flutter/assets/` directory before running.
+
+---
+
+## License
+
+MIT License

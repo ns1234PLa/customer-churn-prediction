@@ -200,7 +200,7 @@ class CustomerDetailScreen extends StatelessWidget {
                         ],
                       ),
 
-                     // Account Information
+                      // Account Information
                       _buildInfoSection(
                         'Account Information',
                         Icons.account_circle_rounded,

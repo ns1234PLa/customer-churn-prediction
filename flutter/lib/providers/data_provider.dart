@@ -27,11 +27,10 @@ class DataProvider with ChangeNotifier {
   List<CustomerProfile> get highRiskCustomers =>
       _allCustomers.where((c) => c.churnProbability >= 0.66).toList()
         ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
-  List<CustomerProfile> get mediumRiskCustomers =>
-      _allCustomers
-          .where((c) => c.churnProbability >= 0.33 && c.churnProbability < 0.66)
-          .toList()
-        ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
+  List<CustomerProfile> get mediumRiskCustomers => _allCustomers
+      .where((c) => c.churnProbability >= 0.33 && c.churnProbability < 0.66)
+      .toList()
+    ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));
   List<CustomerProfile> get lowRiskCustomers =>
       _allCustomers.where((c) => c.churnProbability < 0.33).toList()
         ..sort((a, b) => b.churnProbability.compareTo(a.churnProbability));

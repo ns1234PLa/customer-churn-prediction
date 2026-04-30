@@ -88,49 +88,49 @@ class DataService {
             multipleLines: _parseInt(customerCsv['MultipleLines']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['MultipleLines']) == 1
-                ? 'No phone service'
-                : 'Yes',
+                    ? 'No phone service'
+                    : 'Yes',
             internetService: _parseInt(customerCsv['InternetService']) == 0
                 ? 'DSL'
                 : _parseInt(customerCsv['InternetService']) == 1
-                ? 'Fiber optic'
-                : 'No',
+                    ? 'Fiber optic'
+                    : 'No',
             onlineSecurity: _parseInt(customerCsv['OnlineSecurity']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['OnlineSecurity']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             onlineBackup: _parseInt(customerCsv['OnlineBackup']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['OnlineBackup']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             deviceProtection: _parseInt(customerCsv['DeviceProtection']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['DeviceProtection']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             techSupport: _parseInt(customerCsv['TechSupport']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['TechSupport']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             streamingTV: _parseInt(customerCsv['StreamingTV']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['StreamingTV']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             streamingMovies: _parseInt(customerCsv['StreamingMovies']) == 0
                 ? 'No'
                 : _parseInt(customerCsv['StreamingMovies']) == 1
-                ? 'No internet'
-                : 'Yes',
+                    ? 'No internet'
+                    : 'Yes',
             contract:
                 contractMap[customerCsv['Contract'].toString()] ?? 'Unknown',
             isPaperlessBilling: _parseInt(customerCsv['PaperlessBilling']) == 1,
             paymentMethod:
                 paymentMethodMap[customerCsv['PaymentMethod'].toString()] ??
-                'Unknown',
+                    'Unknown',
             monthlyCharges: _parseDouble(customerCsv['MonthlyCharges']),
             totalCharges: _parseDouble(customerCsv['TotalCharges']),
             didChurn: _parseInt(customerCsv['Churn']) == 1,
