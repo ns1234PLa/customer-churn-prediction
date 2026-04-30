@@ -8,11 +8,11 @@ A complete end-to-end system that predicts customer churn using Machine Learning
 
 | Splash Screen | Dashboard Overview | Customer Search |
 |---|---|---|
-| ![Splash Screen](flutter/assets/screenshots/splash_screnen.jpg) | ![Dashboard Overview](flutter/assets/screenshots/home_screen.jpg) | ![Customer Search](flutter/assets/screenshots/search_screen.jpg) |
+| ![Splash Screen](frontend/assets/screenshots/splash_screnen.jpg) | ![Dashboard Overview](frontend/assets/screenshots/home_screen.jpg) | ![Customer Search](frontend/assets/screenshots/search_screen.jpg) |
 
 | Churn Insights | Feature Breakdown | Risk Distribution |
 |---|---|---|
-| ![Churn Insights](flutter/assets/screenshots/insight_screen_1.jpg) | ![Feature Breakdown](flutter/assets/screenshots/insight_screen_2.jpg) | ![Risk Distribution](flutter/assets/screenshots/insight_screen_3.jpg) |
+| ![Churn Insights](frontend/assets/screenshots/insight_screen_1.jpg) | ![Feature Breakdown](frontend/assets/screenshots/insight_screen_2.jpg) | ![Risk Distribution](frontend/assets/screenshots/insight_screen_3.jpg) |
 
 ---
 
