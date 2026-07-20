@@ -4,6 +4,14 @@ A complete end-to-end system that predicts customer churn using Machine Learning
 
 ---
 
+## Overview
+
+- **ML Pipeline:** Data preprocessing, XGBoost training with cross-validation, SHAP-based explainability
+- **Frontend:** Flutter app consuming batch predictions and feature importance from CSV assets
+- **Output:** Actionable churn risk insights with individual feature breakdowns per customer
+
+---
+
 ## Screenshots
 
 | Splash Screen | Dashboard Overview | Customer Search |
@@ -14,56 +22,38 @@ A complete end-to-end system that predicts customer churn using Machine Learning
 |---|---|---|
 | ![Churn Insights](frontend/assets/screenshots/insight_screen_1.jpg) | ![Feature Breakdown](frontend/assets/screenshots/insight_screen_2.jpg) | ![Risk Distribution](frontend/assets/screenshots/insight_screen_3.jpg) |
 
----
+--- 
 
-## Project Overview
+## Core Architecture & System Design
 
-This project integrates a Python-based machine learning pipeline with a Flutter frontend to deliver an offline-ready churn prediction dashboard. The ML pipeline handles data preprocessing, model training, and SHAP-based explainability, while the Flutter app presents predictions and insights in a clean, responsive interface.
+The application enforces a clean separation of concerns, dividing data heavy-lifting from the UI execution layer:
+
+- **Machine Learning Workspace (`/ML`):** Handles exploratory data analysis, natural language processing for customer sentiment feedback, robust feature engineering, model training/cross-validation, and localized SHAP tree execution profiles.
+- **Frontend Dashboard App (`/frontend`):** A decoupling-focused cross-platform application built using Flutter. It processes localized data streams seamlessly and employs the `Provider` structural pattern for high-performance state management.
 
 ---
 
 ## Repository Structure
 
 ```
-├── notebook/
-│   ├── data_preprocess.ipynb
-│   ├── generate_full_predictions.ipynb
-│   └── all_customers_predictions.csv
+├── ML/
+│   ├── notebook/
+│   │   ├── data_preprocess.ipynb          # EDA, feature engineering
+│   │   └── generate_full_predictions.ipynb # Model training, SHAP export
+│   ├── models/                            # (generated: best_xgb_model.pkl)
+│   ├── metrics/                           # (generated: predictions.csv, shap_all_customers.csv)
+│   └── plots/                             # (generated: diagnostic plots)
 │
-├── models/
-│   └── best_xgb_model.pkl
-│
-├── metrics/
-│   └── shap_all_customers.csv
-│
-├── flutter/
-│   ├── lib/
+├── frontend/
+│   ├── lib/                               
 │   ├── assets/
+│   │   ├── images/
+│   │   └── screenshots/                        
 │   └── pubspec.yaml
 │
-└── README.md
+└── .gitignore                             # Excludes data, models, metrics, plots
+
 ```
-
----
-
-## Machine Learning Pipeline
-
-- Data preprocessing and feature engineering
-- Model training and evaluation — XGBoost, SVM, Random Forest, Logistic Regression
-- SHAP-based explainability for individual predictions
-- Batch prediction export to CSV for use in the Flutter app
-
----
-
-## Flutter Application
-
-- Responsive mobile UI built with Flutter
-- Displays churn predictions at the customer level
-- SHAP-driven insights per customer
-- Offline-ready — powered by local CSV/JSON assets
-- Extendable to a live API backend
-
----
 
 ## Getting Started
 
@@ -82,10 +72,6 @@ flutter pub get
 flutter run
 ```
 
-Place the exported CSV files into the `flutter/assets/` directory before running.
-
----
-
 ## License
 
-MIT License
+MIT License 
