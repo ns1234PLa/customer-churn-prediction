@@ -1,0 +1,18 @@
+# Ignore the raw data repository folder
+ML/data/
+
+# Ignore local duplicate spreadsheets in ML development workspace
+ML/notebook/*.csv
+ML/notebook/*.txt
+
+# Ignore data spreadsheets bundled inside the frontend assets
+frontend/assets/data/*.csv
+frontend/assets/data/*.json
+
+# Ignore all tracking metrics, models, and plot outputs
+ML/metrics/*.csv
+ML/metrics/*.json
+ML/metrics/*.npy
+ML/models/*.json
+ML/models/*.pkl
+ML/plots/*.png
